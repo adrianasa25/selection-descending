@@ -1,0 +1,57 @@
+Program Selection_sort_Descending;
+uses crt;
+
+const
+maks = 50;
+
+type
+Larik = array[1..maks] of integer;
+
+var
+n,i,j,k : integer;
+L: larik;
+min    : integer;
+temp     : integer;
+
+{=======================INPUT LARIK======================}
+begin
+write('Jumlah elemen array L : '); 
+readln(n);
+for i:= 1 to n do
+begin
+    write('L [',i,'] : ');read(L[i]);
+end;
+    writeln('==================');
+    write('Data belum dilakukan pengurutan : ');
+for i:=1 to n  do
+    write(L[i],' ');
+
+{============PROSES SORTING SELECTION SORT DESCENDING========================}
+writeln('');
+writeln('Proses Pengurutuan Selection Sort Maximum : ');
+For i:=1 to n-1 do
+begin
+Min:=i;
+For j:= i to n do
+begin
+            If L[j] > L[min] then
+            Min:=j;
+            For k:=1 to n-1 do
+            write(L[k], ' ')
+End;
+Temp:=L[i];
+    L[i]:=L[min];
+    L[min]:=temp;
+    writeln('');
+
+End;
+{===============TAMPIL DATA=========================}
+
+writeln;
+writeln('Data setelah Diurutkan dengan Selection Sort Descending : ');
+for i := 1 to n do
+write(L[i],' ');
+readln;
+
+readln;
+end.
