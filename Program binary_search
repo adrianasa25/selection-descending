@@ -1,0 +1,53 @@
+program binary_search;
+uses crt;
+const
+   Nmaks=100;
+type
+   LarikInt=array[1..Nmaks] of integer;
+var 
+L:LarikInt;
+i,n,x,idx:integer;
+
+procedure BacaLarik(var L:LarikInt; n:integer);
+var 
+i:integer;
+
+begin
+ for i:= 1 to n do
+begin 
+  write('masukkan nilai L[',i,']:'); readln(L[i]);
+  end;
+end;
+procedure SeqSearch2(L:LarikInt; n:integer; x:integer; var idx:integer);
+
+var
+i:integer;
+
+begin
+  i:=1;
+  while (i<n) and (L[i] <> x) do
+  begin
+   i:=i + 1;
+   end;
+   
+ {i=n or L[i] = x}
+ 
+if L[i] = x then 
+idx:=i
+else
+  idx:=-1;
+end;
+
+begin
+ clrscr;
+ write('berapa jumlah data (n)?'); readln(n);
+ writeln('baca data:');
+ BacaLarik(L,n);
+ 
+write('ketikan nilai yang dicari:'); readln(x);
+SeqSearch2(L, n, x, idx);
+if idx = -1 then
+  writeln('tidak ditemukan!')
+else
+  writeln(x, 'ditemukan pada index ke-', idx);
+end.
